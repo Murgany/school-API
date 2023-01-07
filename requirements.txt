@@ -1,0 +1,10 @@
+asgiref==3.4.1
+dj-database-url==0.5.0
+django-cors-headers==3.8.0
+django-rest-framework==0.1.0
+django-rest-knox==4.1.0
+djangorestframework==3.12.4
+Pillow==8.3.1
+pycparser==2.20
+python-dotenv==0.19.2
+Django~=3.2.16
