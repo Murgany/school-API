@@ -5,6 +5,19 @@
 
 This simple School Management System API is a Django-based web application designed to streamline administrative tasks. The system provides functionalities for managing student information, class details, attendance records, and user authentication.
 
+#API URL: 
+
+https://simpleschoolsystem.pythonanywhere.com/
+
+#Admin user interface URL:
+
+https://simple-school-system.netlify.app/
+
+#Test credentials | both URLs:
+
+Username: Symon
+Password: admin
+
 #Features
 
     Student Information Management
@@ -62,15 +75,6 @@ This simple School Management System API is a Django-based web application desig
     [Rawy Murgany]
     [rawymo@outlook.com]
 
-API URL: https://simpleschoolsystem.pythonanywhere.com/
-API test credentials:
-Username: Symon
-Password: admin
-
-Admin interface URL: https://simple-school-system.netlify.app/
-interface test credentials:
-Username: Symon
-Password: admin
-
 #License
+
 This project is licensed under the MIT License.
