@@ -15,8 +15,8 @@ https://simple-school-system.netlify.app/
 
 #Test credentials | both URLs:
 
-Username: Symon
-Password: admin
+*Username: Symon
+*Password: admin
 
 #Features
 
