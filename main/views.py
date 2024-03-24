@@ -11,10 +11,10 @@ from knox.views import LoginView as KnoxLoginView
 from knox.models import AuthToken
 from rest_framework import viewsets
 
-
-# CRUD Views for all models bellow. All are self-explanatory
-
 class StudentInfoViewSet(viewsets.ViewSet):
+    """
+    A ViewSet for CRUD operations on StudentInfo model.
+    """
     permission_classes = [IsAuthenticated]
 
     def list(self, request):
@@ -56,8 +56,10 @@ class StudentInfoViewSet(viewsets.ViewSet):
         student.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
 class StudentClassInfoViewSet(viewsets.ViewSet):
+    """
+    A ViewSet for CRUD operations on StudentClassInfo model.
+    """
     permission_classes = (IsAuthenticated,)
 
     def list(self, request):
@@ -92,8 +94,10 @@ class StudentClassInfoViewSet(viewsets.ViewSet):
         student.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
 class AttendanceViewSet(viewsets.ViewSet):
+    """
+    A ViewSet for CRUD operations on Attendance model.
+    """
     permission_classes = (IsAuthenticated,)
 
     def list(self, request):
@@ -135,10 +139,10 @@ class AttendanceViewSet(viewsets.ViewSet):
         student.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-# User registration view
-
 class RegisterAPI(generics.GenericAPIView):
+    """
+    A view for user registration.
+    """
     serializer_class = RegisterSerializer
 
     def post(self, request, *args, **kwargs):
@@ -150,8 +154,10 @@ class RegisterAPI(generics.GenericAPIView):
             "token": AuthToken.objects.create(user)[1]
         })
 
-
 class LoginView(KnoxLoginView):
+    """
+    A view for user login.
+    """
     permission_classes = (AllowAny,)
 
     def post(self, request, format=None):
@@ -162,8 +168,6 @@ class LoginView(KnoxLoginView):
         return super(LoginView, self).post(request, format=None)
 
     def get_post_response_data(self, request, token, instance):
-        # serializer = self.get_user_serializer_class()
-        # staff_perms = self.request.user.get_user_permissions()
         user_group = Group.objects.get(user=request.user).name
         data = {
             'username': request.user.username,
